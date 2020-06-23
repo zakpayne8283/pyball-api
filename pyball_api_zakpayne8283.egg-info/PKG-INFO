@@ -1,0 +1,17 @@
+Metadata-Version: 2.1
+Name: pyball-api-zakpayne8283
+Version: 0.0.1
+Summary: Package to access MLB data
+Home-page: https://github.com/pypa/sampleproject
+Author: Zak Payne
+Author-email: zakpayne8283@gmail.com
+License: UNKNOWN
+Description: # pyball-api
+        
+        The Pyball-API helps get baseball data directly from MLB!
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
