@@ -4,8 +4,8 @@ from tests.connection_test import TestConnection
 
 
 def create_suite():
-    test_suite = unittest.TestSuite()
-    test_suite.addTest(TestConnection())
+    # Setup testing suite
+    test_suite = unittest.TestLoader().loadTestsFromTestCase(TestConnection)
 
     return test_suite
 

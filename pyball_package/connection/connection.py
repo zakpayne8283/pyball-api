@@ -1,6 +1,6 @@
 class Connection:
 
-    connection_url = ''
+    host_url = ''
 
     def __init__(self):
         # Sets up the connection w/ parameters
