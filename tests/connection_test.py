@@ -12,6 +12,4 @@ class TestConnection(unittest.TestCase):
         # Create a new API instance
         api = PyballAPI()
 
-        print(api.connection)
-
         self.assertTrue(api.connection is not None)
