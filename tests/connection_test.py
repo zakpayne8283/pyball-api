@@ -10,7 +10,7 @@ class TestConnection(unittest.TestCase):
     # Test if connection is not a null value
     def test_connection_is_not_none(self):
         # Create a new API instance
-        api = PyballAPI()
+        api = PyballAPI(parameters=get_default_api_parameters())
 
         # Test Assert
         self.assertTrue(api.connection is not None)
@@ -18,7 +18,7 @@ class TestConnection(unittest.TestCase):
     # Test if connection url is a valid URL
     def test_connection_url_is_valid(self):
         # Create a new API instance
-        api = PyballAPI()
+        api = PyballAPI(parameters=get_default_api_parameters())
 
         # Create the valid regex
         regex = re.compile(
@@ -36,6 +36,7 @@ class TestConnection(unittest.TestCase):
     def test_connection_request_data_received(self):
         # Create a new API instance
         api = PyballAPI(parameters=get_default_api_parameters())
+        api.connection.make_request()
 
         # Test Assert
-        self.assertTrue(api.connection.make_request() is not None)
+        self.assertTrue(api.connection.request_data is not None)

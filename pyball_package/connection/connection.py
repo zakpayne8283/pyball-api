@@ -1,3 +1,5 @@
+import requests
+
 class Connection:
 
     host_url = None
@@ -16,11 +18,20 @@ class Connection:
             else:
                 # Default endpoint
                 self.endpoint = 'search_player_all'
-        else:
-            # Set all defaults if no parameters are provided
+
+        # Set all defaults if no parameters are provided
+        if self.host_url is None:
             self.host_url = 'http://lookup-service-prod.mlb.com'
-            self.request_path = '/json/named.{endpoint}.bam'
+
+        if self.endpoint is None:
             self.endpoint = 'search_player_all'
 
+        if self.request_path is None:
+            self.request_path = f'/json/named.{self.endpoint}.bam'
+
     def make_request(self):
-        pass
+        # Build the full URL Path
+        full_request_url = self.host_url + self.request_path
+
+        # Make the request and set the data
+        self.request_data = requests.get(full_request_url)
