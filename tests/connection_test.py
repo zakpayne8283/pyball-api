@@ -30,3 +30,10 @@ class TestConnection(unittest.TestCase):
 
         # Test Assert
         self.assertTrue(re.match(regex, api.connection.host_url) is not None)
+
+    # Test if request data is received
+    def test_connection_request_data_received(self):
+        # Create a new API instance
+        api = PyballAPI()
+
+        self.assertTrue(api.connection.make_request() is not None)
