@@ -2,6 +2,7 @@ import re
 import unittest
 
 from pyball_package.main import PyballAPI
+from pyball_package.main import get_default_api_parameters
 
 
 class TestConnection(unittest.TestCase):
@@ -34,7 +35,7 @@ class TestConnection(unittest.TestCase):
     # Test if request data is received
     def test_connection_request_data_received(self):
         # Create a new API instance
-        api = PyballAPI()
+        api = PyballAPI(parameters=get_default_api_parameters())
 
         # Test Assert
         self.assertTrue(api.connection.make_request() is not None)
